@@ -1,4 +1,3 @@
-
 .hole {
   background: url("/hole.png") no-repeat center/contain;
 }
@@ -7,3 +6,117 @@
   background-image: url("/mole.png");
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #372208;
+  color: #ededed;
+  text-align: center;
+  padding: 1rem;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  color: #2bb409;
+}
+
+/* Buttons */
+button {
+  padding: 0.5rem 1.25rem;
+  border: none;
+  border-radius: 999px;
+  background: #4c3308;
+  color: rgb(193, 230, 82);
+  font-weight: 600;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s ease, background 0.15s ease;
+}
+button:hover {
+  background: #d97706;
+  cursor: pointer;
+  transform: translateY(-1px);
+}
+button:active {
+  transform: translateY(1px);
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.scoreboard p {
+  background: #fffbeb; /* pale yellow card */
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-weight: 500;
+  min-width: 5ch;
+}
+
+/* Field Layout */
+.field {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-auto-rows: 80px;
+  gap: 0.75rem;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* Burrows */
+.burrow {
+  background: radial-gradient(circle at 50% 65%, #a16207 0%, #71123b 70%);
+  border-radius: 50%;
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.6);
+  transition: transform 0.15s ease;
+}
+
+/* Bunny */
+.burrow.bunny {
+  background: url("/mole.png") no-repeat center / 60%,
+    radial-gradient(circle at 50% 65%, #07a11e 0%, #127164 70%);
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.burrow.bunny:hover {
+  transform: scale(1.15);
+}
+
+.chip {
+  background: #000000;
+  border: 1px solid #72611f;
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem;
+  font-weight: 600;
+  min-width: 6ch;
+}
+
+.scoreboard {
+  flex-wrap: wrap;
+}
+
+/* timer bar container */
+.timer {
+  width: min(420px, 90%);
+  height: 8px;
+  background: #fde68a;
+  border: 1px solid #fcd34d;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 0.5rem auto 0;
+}
+
+/* the filling part */
+.timer-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #f59e0b, #d97706);
+  transition: width 0.2s linear;
+}

@@ -6,7 +6,7 @@ const TIME_LIMIT = 10;
 const GameContext = createContext();
 
 export function GameProvider({ children }) {
-  const [burrows, setBurrows] = useState();
+  const [burrows, setBurrows] = useState([]);
   const [score, setScore] = useState(0);
   const [time, setTime] = useState(TIME_LIMIT);
   const [playing, setPlaying] = useState(false);
